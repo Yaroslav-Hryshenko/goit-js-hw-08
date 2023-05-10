@@ -11,11 +11,12 @@ const onPlay = function ({ seconds }) {
 
 player.on('timeupdate', throttle(onPlay, 1000));
 
-const currentTime = Number(localStorage.getItem(PLAY_VIDEO));
+const currentTime = (localStorage.getItem(PLAY_VIDEO));
 
- if (currentTime === null) {
-   return;
- } else {
-   console.log(JSON.parse(currentTime));
+//  if (currentTime === null) {
+//    return;
+//  } else {
+  
    player.setCurrentTime(currentTime);
- }
+//  }
+ console.log(JSON.parse(currentTime));
