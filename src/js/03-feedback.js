@@ -4,8 +4,12 @@ const areaMsg = document.querySelector('textarea[name="message"]');
 const form = document.querySelector('.feedback-form');
 const LOCAL_KEY = 'feedback-form-state';
 let dataStorage;
-dataStorage = JSON.parse(localStorage.getItem(LOCAL_KEY)) || {}
-
+dataStorage = JSON.parse(localStorage.getItem(LOCAL_KEY)) || {};
+// if (!localStorage.getItem(LOCAL_KEY)) {
+//   dataStorage = {};
+// } else {
+//   dataStorage = JSON.parse(localStorage.getItem(LOCAL_KEY));
+// }
 setInputValueFromStorage();
 form.addEventListener('input', throttle(storeData, 500));
 form.addEventListener('submit', clearData);
